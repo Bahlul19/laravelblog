@@ -63,3 +63,5 @@ Route::get('/Hello/aboutus', 'HelloController@aboutus');
 Route::get('/', 'PagesController@index');
 Route::get('/pages.aboutus', 'PagesController@aboutUs');
 Route::get('/pages.contactus', 'PagesController@contactUs');
+Route::get('/posts.writepost', 'PostsController@writePost');
+Route::get('/posts.add_category', 'PostsController@addCategory');

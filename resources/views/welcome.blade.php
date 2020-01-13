@@ -42,7 +42,7 @@
             <a class="nav-link" href="{{ url('/pages.aboutus') }}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="post.html">Sample Post</a>
+          <a class="nav-link" href="{{ url('/posts.writepost') }}">Sample Post</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url('/pages.contactus') }}">Contact</a>
