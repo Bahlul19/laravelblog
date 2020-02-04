@@ -64,4 +64,7 @@ Route::get('/', 'PagesController@index');
 Route::get('/pages.aboutus', 'PagesController@aboutUs');
 Route::get('/pages.contactus', 'PagesController@contactUs');
 Route::get('/posts.writepost', 'PostsController@writePost');
-Route::get('/posts.add_category', 'PostsController@addCategory');
+
+//category option into there
+Route::get('/posts.add_category', 'PostsController@addCategory')->name('add.category');
+Route::get('/posts.store_category', 'PostsController@storeCategory')->name('store.category');

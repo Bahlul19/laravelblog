@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use PhpParser\Builder\Class_;
+
+use DB;
+use Illuminate\Support\Facades\Redirect;
 
 class PostsController extends Controller
 {
@@ -14,5 +18,26 @@ class PostsController extends Controller
     public function addCategory()
     {
         return view('posts.add_category');
+    }
+
+    public function storeCategory(Request $request)
+    {
+        $data = array();
+        $data['name'] = $request->name;
+        $data['slug'] = $request->slug;
+        $category = DB::table('categories')->insert($data);
+
+        $data = array();
+        $data['name'] = $request->name;
+        $data['slug'] = $request->slug;
+
+        if($category)
+        {
+            return back()->with('success','Cateegories are inserted successfully');
+        }
+        else
+        {
+            return back()->with('error', 'Cateegories are not inserted successfully');
+        }
     }
 }

@@ -7,8 +7,8 @@
             <a href="/posts.add_category" class="btn btn-danger">Add Category</a>
             <a href="#" class="btn btn-info">List Category</a>
         </p>
-        <form name="sentMessage" id="categoryForm" novalidate>
-
+      <form action="{{ route('store.category') }}">
+          @csrf
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
               <label>Category Name</label>
