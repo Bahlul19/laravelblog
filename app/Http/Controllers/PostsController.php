@@ -22,6 +22,12 @@ class PostsController extends Controller
 
     public function storeCategory(Request $request)
     {
+        //validation 
+        $validatedData = $request->validate([
+            'name' => 'required|unique:categories|max:25|min:4',
+            'slug' => 'required|unique:categories|max:25|min:4',
+        ]);
+
         $data = array();
         $data['name'] = $request->name;
         $data['slug'] = $request->slug;
@@ -39,5 +45,6 @@ class PostsController extends Controller
         {
             return back()->with('error', 'Cateegories are not inserted successfully');
         }
+        
     }
 }
