@@ -6,31 +6,13 @@ use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-    //show method
-    public function show($posts)
+    public function writePost()
     {
-        $myName = "Testing";
-        return view('posts',
-        [
-            'myName' => $myName
-        ]);
+        return view('posts.writepost');
     }
 
-    public function index()
+    public function addCategory()
     {
-        $nameIndex = "Testing";
-
-        return view('posts/index',
-        [
-            'nameIndex' => $nameIndex
-        ]);
-
-        //$this->set(compact('nameIndex'));
-    }
-
-    public function postSlugsValues()
-    {
-        $posts = DB::table('posts')->where('slug', $slug)->first();
-        dd($posts);
+        return view('posts.add_category');
     }
 }
