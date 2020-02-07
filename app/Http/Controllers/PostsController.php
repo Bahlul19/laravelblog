@@ -49,4 +49,11 @@ class PostsController extends Controller
         $category = DB::table('categories')->get();
         return view('posts.all_category', compact('category'));
     }
+
+    public function viewCategory($id)
+    {
+        $category = DB::table('categories')->where('id', $id)->first();
+       // return response()->json($category);
+        return view('posts.view_category', compact('category'));
+    }
 }

@@ -27,7 +27,7 @@
               <td>
                 <a href="" class="btn btn-info btn-sm">Edit</a>
                 <a href="" class="btn btn-danger btn-sm">Delete</a>
-                <a href="" class="btn btn-success btn-sm">View</a>
+              <a href="{{ URL::to('posts.view_category/'. $categories->id) }}" class="btn btn-success btn-sm">View</a>
               </td>
             </tr>
             
