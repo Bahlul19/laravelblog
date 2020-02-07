@@ -33,10 +33,6 @@ class PostsController extends Controller
         $data['slug'] = $request->slug;
         $category = DB::table('categories')->insert($data);
 
-        $data = array();
-        $data['name'] = $request->name;
-        $data['slug'] = $request->slug;
-
         if($category)
         {
             return back()->with('success','Cateegories are inserted successfully');
@@ -46,5 +42,11 @@ class PostsController extends Controller
             return back()->with('error', 'Cateegories are not inserted successfully');
         }
         
+    }
+
+    public function allCategory()
+    {
+        $category = DB::table('categories')->get();
+        return view('posts.all_category', compact('category'));
     }
 }

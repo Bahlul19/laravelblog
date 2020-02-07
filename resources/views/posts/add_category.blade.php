@@ -4,8 +4,8 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <p>
-            <a href="/posts.add_category" class="btn btn-danger">Add Category</a>
-            <a href="#" class="btn btn-info">List Category</a>
+        <a href="{{ route('add.category') }}" class="btn btn-danger">Add Category</a>
+            <a href="{{ route('all.category') }}" class="btn btn-info">List Category</a>
         </p>
 
         @if ($errors->any())
