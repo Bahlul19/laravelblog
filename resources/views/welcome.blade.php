@@ -122,6 +122,34 @@
   <!-- Custom scripts for this template -->
 <script src="{{ asset('assets/js/clean-blog.min.js') }}"></script>
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+
+$(document).on("click", "#delete", function(e){
+  e.preventDefault();
+    var link = $(this).attr("href");
+    swal({
+      title : "Are you sure to delete?",
+      text : "Once delete this will be parmanently delete",
+      icon : "warning",
+      button : true,
+      dangermode : true,
+    })
+    .then((willDelete) => {
+      if(willDelete)
+      {
+        window.location.href = link;
+      }
+      else
+      {
+        swal("Safe Data");
+      }
+    });
+});
+
+</script>
+
 </body>
 
 </html>

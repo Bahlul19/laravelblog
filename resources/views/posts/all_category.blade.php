@@ -25,9 +25,9 @@
               <td>{{ $categories-> name}}</td>
               <td>{{ $categories-> slug}}</td>
               <td>
-                <a href="" class="btn btn-info btn-sm">Edit</a>
-                <a href="" class="btn btn-danger btn-sm">Delete</a>
-              <a href="{{ URL::to('posts.view_category/'. $categories->id) }}" class="btn btn-success btn-sm">View</a>
+                <a href="" class="btn btn-info ">Edit</a>
+                <a href="{{ URL::to('posts.delete_category/'. $categories->id) }}" class="btn btn-danger" id="delete">Delete</a>
+              <a href="{{ URL::to('posts.view_category/'. $categories->id) }}" class="btn btn-success">View</a>
               </td>
             </tr>
             

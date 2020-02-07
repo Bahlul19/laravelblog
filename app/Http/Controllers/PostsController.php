@@ -35,7 +35,7 @@ class PostsController extends Controller
 
         if($category)
         {
-            return back()->with('success','Cateegories are inserted successfully');
+            return Redirect()->route('all.category')->with('success','Cateegories are inserted successfully');
         }
         else
         {
@@ -55,5 +55,18 @@ class PostsController extends Controller
         $category = DB::table('categories')->where('id', $id)->first();
        // return response()->json($category);
         return view('posts.view_category', compact('category'));
+    }
+
+    public function deleteCategory($id)
+    {
+        $category = DB::table('categories')->where('id', $id)->delete();
+        if($category)
+        {
+            return Redirect()->route('all.category')->with('success','Categories are deleted successfully');
+        }
+        else
+        {
+            return back()->with('error', 'Categories is not deleted successfully');
+        }
     }
 }

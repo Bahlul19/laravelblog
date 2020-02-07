@@ -70,3 +70,5 @@ Route::get('/posts.add_category', 'PostsController@addCategory')->name('add.cate
 Route::get('/posts.store_category', 'PostsController@storeCategory')->name('store.category');
 Route::get('/posts.all_category', 'PostsController@allCategory')->name('all.category');
 Route::get('/posts.view_category/{id}', 'PostsController@viewCategory');
+Route::get('/posts.delete_category/{id}','PostsController@deleteCategory');
+
