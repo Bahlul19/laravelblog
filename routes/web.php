@@ -67,10 +67,10 @@ Route::get('/posts.writepost', 'PostsController@writePost');
 
 //category option into there
 Route::get('/posts.add_category', 'PostsController@addCategory')->name('add.category');
-Route::get('/posts.store_category', 'PostsController@storeCategory')->name('store.category');
+Route::post('/posts.store_category', 'PostsController@storeCategory')->name('store.category');
 Route::get('/posts.all_category', 'PostsController@allCategory')->name('all.category');
 Route::get('/posts.view_category/{id}', 'PostsController@viewCategory');
 Route::get('/posts.delete_category/{id}','PostsController@deleteCategory');
 Route::get('/posts.edit_category/{id}','PostsController@editCategory');
-Route::post('/posts.update_category/{id}','PostsController@updateCategory')->name('update.category');
+Route::post('/posts.update_category/{id}','PostsController@updateCategory');
 

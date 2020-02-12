@@ -32,7 +32,6 @@ class PostsController extends Controller
         $data['name'] = $request->name;
         $data['slug'] = $request->slug;
         $category = DB::table('categories')->insert($data);
-
         if($category)
         {
             return Redirect()->route('all.category')->with('success','Cateegories are inserted successfully');
