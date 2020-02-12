@@ -77,3 +77,4 @@ Route::post('/posts.update_category/{id}','PostsController@updateCategory');
 //Post Routing 
 Route::get('/posts.writepost', 'UserPostsController@writePost');
 Route::post('/posts.store_post', 'UserPostsController@storePost')->name('store.post');
+Route::get('/posts.all_post', 'UserPostsController@getAllPost')->name('all.post');

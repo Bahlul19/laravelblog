@@ -61,4 +61,10 @@ class UserPostsController extends Controller
         }
     }
 
+    public function getAllPost()
+    {
+        $posts = DB::table('posts')->get();
+        return view('posts.all_posts', compact('posts'));
+    }
+
 }
