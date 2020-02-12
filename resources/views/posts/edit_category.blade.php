@@ -18,7 +18,7 @@
         </div>
         @endif
 
-      <form action="{{ route('update.category') }}">
+      <form action="{{ url('posts.update_category/'.$category->id) }}" method="post">
           @csrf
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
@@ -39,7 +39,7 @@
           <br>
           <div id="success"></div>
           <div class="form-group">
-            <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+            <button type="submit" class="btn btn-primary">Send</button>
           </div>
         </form>
       </div>

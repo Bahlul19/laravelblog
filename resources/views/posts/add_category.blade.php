@@ -18,7 +18,7 @@
         </div>
         @endif
 
-      <form action="{{ route('store.category') }}">
+      <form action="{{ route('store.category') }}" method="post">
           @csrf
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">

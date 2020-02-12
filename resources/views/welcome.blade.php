@@ -143,7 +143,7 @@ $(document).on("click", "#delete", function(e){
       }
       else
       {
-        swal("Safe Data");
+        swal("Thanks for not deleting that data");
       }
     });
 });

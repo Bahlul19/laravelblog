@@ -72,10 +72,10 @@ class PostsController extends Controller
     public function editCategory($id)
     {
         $category = DB::table('categories')->where('id', $id)->first();
-        return view('posts.edit_category', compact($category));
+        return view('posts.edit_category', compact('category'));
     }
 
-    public function updateCategory(Request $request)
+    public function updateCategory(Request $request, $id)
     {
         $validatedData = $request->validate([
             'name' => 'required|unique:categories|max:25|min:4',
@@ -86,7 +86,6 @@ class PostsController extends Controller
         $data['name'] = $request->name;
         $data['slug'] = $request->slug;
         $category = DB::table('categories')->where('id', $id)->update($data);
-
         if($category)
         {
             return Redirect()->route('all.category')->with('success','Categories are updated successfully');
