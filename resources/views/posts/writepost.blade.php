@@ -8,14 +8,26 @@
             <a href="#" class="btn btn-info">List Category</a>
         </p>
         
-        <form name="sentMessage" id="contactForm" novalidate>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
 
+      <form action="{{ route('store.post') }}" method="post" enctype="multipart/form-data">
+        @csrf
             <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
+                  <div>Category Name</div>
                   <label>Category ID</label>
                  <select class="form-control" name="category_id">
-                     <option>ABCD</option>
-                     <option>EFGH</option>
+                   @foreach($category as $categories)
+                 <option value="{{ $categories->id }}">{{ $categories->name }}</option>
+                    @endforeach
                  </select>
                   <p class="help-block text-danger"></p>
                 </div>

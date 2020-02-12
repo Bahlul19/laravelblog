@@ -63,9 +63,8 @@ Route::get('/Hello/aboutus', 'HelloController@aboutus');
 Route::get('/', 'PagesController@index');
 Route::get('/pages.aboutus', 'PagesController@aboutUs');
 Route::get('/pages.contactus', 'PagesController@contactUs');
-Route::get('/posts.writepost', 'PostsController@writePost');
 
-//category option into there
+//Category Routing 
 Route::get('/posts.add_category', 'PostsController@addCategory')->name('add.category');
 Route::post('/posts.store_category', 'PostsController@storeCategory')->name('store.category');
 Route::get('/posts.all_category', 'PostsController@allCategory')->name('all.category');
@@ -74,3 +73,7 @@ Route::get('/posts.delete_category/{id}','PostsController@deleteCategory');
 Route::get('/posts.edit_category/{id}','PostsController@editCategory');
 Route::post('/posts.update_category/{id}','PostsController@updateCategory');
 
+
+//Post Routing 
+Route::get('/posts.writepost', 'UserPostsController@writePost');
+Route::post('/posts.store_post', 'UserPostsController@storePost')->name('store.post');
