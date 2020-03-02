@@ -25,7 +25,8 @@
 
             <tr>
               <td>{{ $post-> id}}</td>
-              <td>{{ $post-> category_id}}</td>
+              <!--The name came from the categories table-->
+              <td>{{ $post-> name}}</td>
               <td>{{ $post-> title}}</td>
               <td>{{ $post-> details}}</td>
               <td><img src="{{ URL::to($post->image)}}" style="height: 70px; width: 100px"></td>
