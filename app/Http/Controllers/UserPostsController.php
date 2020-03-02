@@ -63,13 +63,22 @@ class UserPostsController extends Controller
 
     public function getAllPost()
     {
-        // $posts = DB::table('posts')->get();
         $posts = DB::table('posts')
                 ->join('categories','posts.category_id','categories.id')
                 ->select('posts.*','categories.name')
                 ->get();
      
         return view('posts.all_posts', compact('posts'));
+    }
+
+    public function getIndividualPosts($id)
+    {
+        $posts = DB::table('posts')->
+                 join('categories','posts.category_id','categories.id')
+                 ->select('posts.*','categories.name')
+                 ->where('posts.id', $id)->first();
+
+        return view('posts.view_post', compact('posts'));
     }
 
 }

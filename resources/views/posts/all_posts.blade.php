@@ -6,7 +6,7 @@
         <p>
             <a href="{{ route('add.category') }}" class="btn btn-danger">Add Category</a>
             <a href="{{ route('all.category') }}" class="btn btn-info">List Category</a>
-            <a href="{{ route('all.post') }}" class="btn btn-danger">List Posts</a>
+            <a href="{{ route('all.posts') }}" class="btn btn-danger">List Posts</a>
         </p>
         <table class="table">
           <thead>

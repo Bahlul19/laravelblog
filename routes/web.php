@@ -75,6 +75,8 @@ Route::post('/posts.update_category/{id}','PostsController@updateCategory');
 
 
 //Post Routing 
-Route::get('/posts.writepost', 'UserPostsController@writePost');
+Route::get('/posts.writepost', 'UserPostsController@writePost')->name('add.posts');
 Route::post('/posts.store_post', 'UserPostsController@storePost')->name('store.post');
-Route::get('/posts.all_post', 'UserPostsController@getAllPost')->name('all.post');
+Route::get('/posts.all_post', 'UserPostsController@getAllPost')->name('all.posts');
+Route::get('/posts.view_post/{id}', 'UserPostsController@getIndividualPosts');
+Route::get('/posts.delete_post/{id}', 'UserPostsController@deletePost');
