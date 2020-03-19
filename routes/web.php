@@ -79,4 +79,6 @@ Route::get('/posts.writepost', 'UserPostsController@writePost')->name('add.posts
 Route::post('/posts.store_post', 'UserPostsController@storePost')->name('store.post');
 Route::get('/posts.all_post', 'UserPostsController@getAllPost')->name('all.posts');
 Route::get('/posts.view_post/{id}', 'UserPostsController@getIndividualPosts');
-Route::get('/posts.delete_post/{id}', 'UserPostsController@deletePost');
+Route::get('/posts.edit_post/{id}', 'UserPostsController@editPost');
+Route::post('/posts.update_posts/{id}','UserPostsController@updatePost');
+Route::get('/posts.delete_posts/{id}','UserPostsController@deletePost');

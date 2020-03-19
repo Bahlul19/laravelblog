@@ -32,7 +32,7 @@
               <td><img src="{{ URL::to($post->image)}}" style="height: 70px; width: 100px"></td>
               <td>
                 <a href="{{ URL::to('posts.edit_post/'. $post->id) }}" class="btn btn-info ">Edit</a>
-                <a href="{{ URL::to('posts.delete_post/'. $post->id) }}" class="btn btn-danger" id="delete">Delete</a>
+                <a href="{{ URL::to('posts.delete_posts/'. $post->id) }}" class="btn btn-danger" id="delete">Delete</a>
               <a href="{{ URL::to('posts.view_post/'. $post->id) }}" class="btn btn-success">View</a>
               </td>
             </tr>
