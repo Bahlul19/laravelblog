@@ -48,3 +48,7 @@ Route::get('/posts.view_post/{id}', 'UserPostsController@getIndividualPosts');
 Route::get('/posts.edit_post/{id}', 'UserPostsController@editPost');
 Route::post('/posts.update_posts/{id}','UserPostsController@updatePost');
 Route::get('/posts.delete_posts/{id}','UserPostsController@deletePost');
+
+//student Routing
+Route::get('/student.add_student', 'StudentsController@student')->name('add.student');
+Route::post('/student.store_student', 'StudentsController@storeStudent')->name('store.student');
