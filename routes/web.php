@@ -11,40 +11,6 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('pages.index');
-// });
-
-// Route::get('/home', function() {
-//     return view('home');
-// });
-
-// Route::get('/home', function(){
-//     $name = "Tausif";
-//     return view $this->set(compact('name'));
-// });
-
-Route::get('/home', function(){
-    $name = request('name');
-    return view ('home', 
-    [
-        'name' => $name
-    ]);
-});
-
-// Route::get('/', function() {
-//     return view('home');
-// });
-
-Route::get('/home2', function(){
-    $name2 = request('name2');
-
-    return view('home2', 
-    [
-        'name2' => $name2
-    ]);
-});
-
 //20-11-19
 
 Route::get('/contact', function(){
